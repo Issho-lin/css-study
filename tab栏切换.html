@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            display: none;
+        }
+        .content:target {
+            display: block;
+        }
+        ._content > ._content2 {
+            display: none;
+        }
+        #r1:checked ~ ._content > ._content1 {
+            display: block;
+        }
+        #r2:checked ~ ._content > ._content1 {
+            display: none;
+        }
+        #r2:checked ~ ._content > ._content2 {
+            display: block;
+        }
+        input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#li1">列表1</a>
+            <a href="#li2">列表2</a>
+        </li>
+    </ul>
+    <div id='li1' class="content">这是列表1</div>
+    <div id="li2" class="content">这是列表2</div>
+
+    <input type="radio" id="r1" name="nav">
+    <input type="radio" id='r2' name="nav">
+    <ul>
+        <li>
+            <label for="r1">列表1</a>
+            <label for="r2">列表2</a>
+        </li>
+    </ul>
+    <div class="_content">
+        <div class="_content1">列表1内容:123456</div>
+        <div class="_content2">列表2内容:abcdefgkijkl</div>
+    </div>
+</body>
+</html>

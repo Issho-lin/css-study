@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            perspective: 400px;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .img {
+            width: 100%;
+            height: 100%;
+            background-color: #ECF0F1;
+            color: rgba(52, 73, 94, 0.6);
+            box-shadow: inset 0 2px 20px #e6ebed;
+            border-radius: 4px;
+        }
+        .info {
+            transform: rotate3d(1, 0, 0, 90deg);
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 4px;
+            pointer-events: none;
+            box-sizing: border-box;
+            background-color: rgba(26, 188, 156, 0.9);
+            color: #FFFFFF;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .in-top .info {
+            transform-origin: top;
+            -webkit-animation: in-top 300ms ease 0ms 1 forwards;
+            animation: in-top 300ms ease 0ms 1 forwards;
+        }
+
+        .in-right .info {
+            transform-origin: right;
+            -webkit-animation: in-right 300ms ease 0ms 1 forwards;
+            animation: in-right 300ms ease 0ms 1 forwards;
+        }
+
+        .in-bottom .info {
+            transform-origin: bottom;
+            -webkit-animation: in-bottom 300ms ease 0ms 1 forwards;
+            animation: in-bottom 300ms ease 0ms 1 forwards;
+        }
+
+        .in-left .info {
+            transform-origin: left;
+            -webkit-animation: in-left 300ms ease 0ms 1 forwards;
+            animation: in-left 300ms ease 0ms 1 forwards;
+        }
+
+        .out-top .info {
+            transform-origin: top;
+            -webkit-animation: out-top 300ms ease 0ms 1 forwards;
+            animation: out-top 300ms ease 0ms 1 forwards;
+        }
+
+        .out-right .info {
+            transform-origin: right;
+            -webkit-animation: out-right 300ms ease 0ms 1 forwards;
+            animation: out-right 300ms ease 0ms 1 forwards;
+        }
+
+        .out-bottom .info {
+            transform-origin: bottom;
+            -webkit-animation: out-bottom 300ms ease 0ms 1 forwards;
+            animation: out-bottom 300ms ease 0ms 1 forwards;
+        }
+
+        .out-left .info {
+            transform-origin: left;
+            -webkit-animation: out-left 300ms ease 0ms 1 forwards;
+            animation: out-left 300ms ease 0ms 1 forwards;
+        }
+
+    @-webkit-keyframes in-top {
+        from {
+            transform: rotate3d(-1, 0, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+
+    @keyframes in-top {
+        from {
+            transform: rotate3d(-1, 0, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+    @-webkit-keyframes in-right {
+        from {
+            transform: rotate3d(0, -1, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+    @keyframes in-right {
+        from {
+            transform: rotate3d(0, -1, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+    @-webkit-keyframes in-bottom {
+        from {
+            transform: rotate3d(1, 0, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+    @keyframes in-bottom {
+        from {
+            transform: rotate3d(1, 0, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+    @-webkit-keyframes in-left {
+        from {
+            transform: rotate3d(0, 1, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+    @keyframes in-left {
+        from {
+            transform: rotate3d(0, 1, 0, 104deg);
+        } to {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+    }
+    @-webkit-keyframes out-top {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(-1, 0, 0, 104deg);
+        }
+    }
+    @keyframes out-top {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(-1, 0, 0, 104deg);
+        }
+    }
+    @-webkit-keyframes out-right {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(0, -1, 0, 104deg);
+        }
+    }
+    @keyframes out-right {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(0, -1, 0, 104deg);
+        }
+    }
+    @-webkit-keyframes out-bottom {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(1, 0, 0, 104deg);
+        }
+    }
+    @keyframes out-bottom {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(1, 0, 0, 104deg);
+        }
+    }
+    @-webkit-keyframes out-left {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(0, 1, 0, 104deg);
+        }
+    }
+    @keyframes out-left {
+        from {
+            transform: rotate3d(0, 0, 0, 0deg);
+        } to {
+            transform: rotate3d(0, 1, 0, 104deg);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="img"></div>
+        <div class="info">感知方向的鼠标悬停</div>
+    </div>
+    <script>
+        const directions = ['top', 'right', 'bottom', 'left']
+        const classNames = ['in', 'out'].map(c => directions.map(d => `${c}-${d}`)).reduce((a, b) => a.concat(b))
+        const getDirectionKey = (ev, node) => {
+            const { width, height, top, left } = node.getBoundingClientRect()
+            const l = ev.pageX - (left + window.pageXOffset)
+            const t = ev.pageY - (top + window.pageYOffset);
+            const x = l - (width / 2) * (width > height ? height / width : 1);
+            const y = t - (height / 2) * (height > width ? width / height : 1);
+            return Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
+        }
+        class Item {
+            constructor(element) {
+                this.element = element
+                this.element.addEventListener('mouseover', ev => this.update(ev, 'in'))
+                this.element.addEventListener('mouseout', ev => this.update(ev, 'out'))
+            }
+            update(ev, prefix) {
+                this.element.classList.remove(...classNames)
+                this.element.classList.add(
+                    `${prefix}-${directions[getDirectionKey(ev, this.element)]}`
+                )
+            }
+        }
+        const node = document.getElementById('box')
+        new Item(node)
+    </script>
+</body>
+</html>
